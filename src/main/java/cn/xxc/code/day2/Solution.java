@@ -1,5 +1,8 @@
 package cn.xxc.code.day2;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author Jadmin
  */
@@ -27,8 +30,30 @@ public class Solution {
      * @return
      */
     public boolean isPalindrome(int x) {
-        //字符串反转
+        //字符串反转  暂时没有更好的解法
         String revorseString = new StringBuilder(x + "").reverse().toString();
         return (x+"").equals(revorseString);
+    }
+
+    public static boolean isPalin(int x) {
+        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilderAfter = new StringBuilder();
+        List<Integer> integers = Arrays.asList(x);
+        for (int i = 0; i < integers.size(); i++) {
+            System.out.println(stringBuilder.append(integers.get(i)));
+
+        }
+        for (int i = integers.size()-1; i >= 0 ; i--) {
+            System.out.println(stringBuilderAfter.append(integers.get(i)));
+        }
+        if (stringBuilder.toString().equals(stringBuilderAfter.toString())) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isPalin(-121));
     }
 }
