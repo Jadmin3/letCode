@@ -6,15 +6,18 @@ public class ArrayTest {
 
 
     public static void main(String[] args) {
-        int [] nums=  new int[]{1,3,5,6};
+        int[] nums = new int[]{1, 3, 5, 6};
         System.out.println(searchInsert(nums, 7));
+        String s = "flower";
+        System.out.println(s.startsWith("flowe"));
     }
 
     /**
      * 示例 2：
-     *
+     * <p>
      * 输入：nums1 = [4,9,5], nums2 = [9,4,9,8,4]
      * 输出：[9,4]
+     *
      * @param nums1
      * @param nums2
      * @return
@@ -24,10 +27,10 @@ public class ArrayTest {
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
 
-        for (int num:nums1) {
+        for (int num : nums1) {
             set1.add(num);
         }
-        for (int num2:nums2) {
+        for (int num2 : nums2) {
             set2.add(num2);
         }
 
@@ -42,7 +45,7 @@ public class ArrayTest {
         }
         //设置一个存放交集的集合
         Set<Integer> setResult = new HashSet<>();
-        for (Integer s:set1) {
+        for (Integer s : set1) {
             //如果集合2包含集合1的元素则添加到结果集
             if (set2.contains(s)) {
                 setResult.add(s);
@@ -51,7 +54,7 @@ public class ArrayTest {
         //因为返回结果为数组类型 需要将集合类型转存为数组
         int index = 0;
         int[] result = new int[setResult.size()];
-        for (Integer s1: setResult) {
+        for (Integer s1 : setResult) {
             result[index++] = s1;
         }
         return result;
@@ -82,20 +85,20 @@ public class ArrayTest {
     }
 
     /**
-     *
      * 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
-     *
+     * <p>
      * 你可以假设数组中无重复元素。
-     *
+     * <p>
      * 示例 1:
-     *
+     * <p>
      * 输入: [1,3,5,6], 5
      * 输出: 2
-     *
+     * <p>
      * 作者：力扣 (LeetCode)
      * 链接：https://leetcode-cn.com/leetbook/read/array-and-string/cxqdh/
      * 来源：力扣（LeetCode）
      * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     *
      * @param nums
      * @param target
      * @return
@@ -109,6 +112,36 @@ public class ArrayTest {
         }
         return nums.length;
     }
+
+    /**
+     * 编写一个函数来查找字符串数组中的最长公共前缀。
+     * <p>
+     * 如果不存在公共前缀，返回空字符串 ""。
+     * <p>
+     *  
+     * <p>
+     * 示例 1：
+     * <p>
+     * 输入：strs = ["flower","flow","flight"]
+     * 输出："fl"
+     *这里时间复杂度是O(n)
+     * @param strs
+     * @return
+     */
+    public String longestCommonPrefix(String[] strs) {
+        if (strs.length == 0) return "";
+        //公共前缀比所有字符串都短
+        String s = strs[0];
+        for (String string : strs) {
+            //判断是否有指定的前缀开始
+            while (!string.startsWith(s)) {
+                //公共前缀不匹配就让它变短！
+                s = s.substring(0, s.length() - 1);
+            }
+        }
+        return s;
+    }
+
 
 
 }
