@@ -55,5 +55,6 @@ public class Solution {
 
     public static void main(String[] args) {
         System.out.println(isPalin(-121));
+        System.out.println("code dev");
     }
 }
