@@ -48,14 +48,14 @@ public class Soultion {
         }
         System.out.println(data.toString());
 
-//
-//     /*   Map<String, Object> map = new HashMap<String, Object>(4);
-//        while (true) {
-//            map.put("secret", "3JPoaXsC04xs/1//PJ2JQA==");
-//            map.put("salt", "1611412194355");
-//            System.out.println(JSONUtil.formatJsonStr(HttpUtil.post("http://api.im004.cn:81/config", map)));
-//        }d
-//*/
+
+     /*   Map<String, Object> map = new HashMap<String, Object>(4);
+        while (true) {
+            map.put("secret", "3JPoaXsC04xs/1//PJ2JQA==");
+            map.put("salt", "1611412194355");
+            System.out.println(JSONUtil.formatJsonStr(HttpUtil.post("http://api.im004.cn:81/config", map)));
+        }d
+*/
 
     }
 
